@@ -1,7 +1,15 @@
 <div class="d-inline-flex flex-wrap flex-row justify-content-evenly align-items-center">
   <% @posts.each do |post| %>
     <div class="post p-2">
-      <img class="img-fluid rounded mb-1" src="https://assets.eliduke.com/archives/instagram/eliduke/<%= post.elements.first.uri %>">
+      <% if post.elements.first.uri.include?("jpg") %>
+        <img class="img-fluid rounded mb-1" src="https://assets.eliduke.com/archives/instagram/eliduke/<%= post.elements.first.uri %>">
+      <% else %>
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="https://assets.eliduke.com/archives/instagram/eliduke/<%= post.elements.first.uri %>" type="video/mp4">
+          </video>
+        </div>
+      <% end %>
       <p class="text-muted">
         <small>
           <b><%= Time.at(post.created).strftime("%B %-d, %Y") %></b>:
