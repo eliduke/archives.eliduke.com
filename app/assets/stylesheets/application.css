@@ -8,3 +8,9 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+.post { width: 350px }
+
+@media (min-width: 500px) {
+  .post { width: 280px }
+}
