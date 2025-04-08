@@ -1,3 +1,20 @@
+<div class="d-flex justify-content-center mb-4">
+  <%= form_with url: root_path, method: :get do |form| %>
+    <div class="input-group">
+      <%= form.text_field :q, value: params[:q], placeholder: "Search for stuff...", class: "form-control" %>
+      <span class="input-group-text">
+        <% if 'q'.in? params %>
+          <%= link_to root_path do %>
+            <span class="btn btn-sm text-primary">&times;</span>
+          <% end %>
+        <% else %>
+          <span class="btn btn-sm text-muted">&times;</span>
+        <% end %>
+      </span>
+    </div>
+  <% end %>
+</div>
+
 <div class="d-inline-flex flex-wrap flex-row justify-content-evenly align-items-top">
   <% @posts.each do |post| %>
     <% first_element = post.elements.first.uri %>
@@ -5,13 +22,11 @@
       <% if first_element.include?("jpg") %>
         <img class="img-fluid rounded mb-1" src="https://assets.eliduke.com/archives/instagram/eliduke/<%= first_element %>">
       <% else %>
-        <div class="ratio ratio-16x9">
-          <video controls>
-            <source src="https://assets.eliduke.com/archives/instagram/eliduke/<%= first_element %>" type="video/mp4">
-          </video>
-        </div>
+        <video controls>
+          <source src="https://assets.eliduke.com/archives/instagram/eliduke/<%= first_element %>" type="video/mp4">
+        </video>
       <% end %>
-      <p class="text-muted">
+      <p class="text-muted mb-5">
         <small>
           <b><%= Time.at(post.created).strftime("%B %-d, %Y") %></b>:
           <%= post.title.truncate(150, separator: " ", omission: "...") %>
