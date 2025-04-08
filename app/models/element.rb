@@ -16,6 +16,6 @@ class Element < ApplicationRecord
   private
 
   def location_results
-    Geocoder.search([latitude, longitude]).first if latitude && longitude
+    Geocoder.search([ latitude, longitude ]).first if latitude && longitude
   end
 end

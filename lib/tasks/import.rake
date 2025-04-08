@@ -1,6 +1,6 @@
 namespace :import do
   desc "Import POSTS from the /lib/posts.json file"
-  task posts: [:environment] do
+  task posts: [ :environment ] do
     file = File.open(Dir.pwd + "/lib/posts.json")
     posts = JSON.load(file)
 
