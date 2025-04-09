@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-lg-6 offset-sm-3">
+    <p class="mb-3">
+      <b><%= Time.at(@post.created).strftime("%B %-d, %Y") %></b>:
+      <%= simple_format(@post.title) %>
+    <p>
+
+    <% @post.elements.each do |element| %>
+      <div class="mb-3">
+        <% if element.uri.include?("jpg") %>
+          <img class="img-fluid rounded" src="https://assets.eliduke.com/archives/instagram/eliduke/<%= element.uri %>">
+        <% else %>
+          <video controls>
+            <source src="https://assets.eliduke.com/archives/instagram/eliduke/<%= element.uri %>" type="video/mp4">
+          </video>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
