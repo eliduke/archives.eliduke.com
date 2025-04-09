@@ -33,7 +33,6 @@ namespace :import do
       end
     end
   end
-end
 
   desc "Import STORIES from the /lib/stories.json file"
   task stories: [ :environment ] do
