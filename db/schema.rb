@@ -21,8 +21,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_06_065623) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.string "tipe"
     t.string "title"
+    t.string "uri"
     t.integer "created"
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
     t.integer "element_count"
   end
 end

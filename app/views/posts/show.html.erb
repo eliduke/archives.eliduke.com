@@ -5,7 +5,7 @@
       <%= simple_format(@post.title) %>
     <p>
 
-    <% @post.elements.each do |element| %>
+    <% @elements.each do |element| %>
       <% location = Geocoder.search([element.latitude, element.longitude]).first %>
       <div class="mb-3">
         <% if element.uri.include?("jpg") %>

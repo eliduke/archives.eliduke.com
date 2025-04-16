@@ -17,23 +17,22 @@
 
 <div class="d-inline-flex flex-wrap flex-row justify-content-evenly align-items-top">
   <% @posts.each do |post| %>
-    <% first_element = post.elements.first.uri %>
-
     <div class="post p-2">
+      <% if post.uri.include?("jpg") %>
+        <img class="img-fluid rounded mb-1" src="https://assets.eliduke.com/archives/instagram/eliduke/<%= post.uri %>">
+      <% else %>
+        <video controls>
+          <source src="https://assets.eliduke.com/archives/instagram/eliduke/<%= post.uri %>" type="video/mp4">
+        </video>
+      <% end %>
+
       <%= link_to post_path(post.created) do %>
-        <% if first_element.include?("jpg") %>
-          <img class="img-fluid rounded mb-1" src="https://assets.eliduke.com/archives/instagram/eliduke/<%= first_element %>">
-        <% else %>
-          <video controls>
-            <source src="https://assets.eliduke.com/archives/instagram/eliduke/<%= first_element %>" type="video/mp4">
-          </video>
-        <% end %>
         <p class="caption mb-5">
           <b><%= Time.at(post.created).strftime("%B %-d, %Y") %></b>:
 
           <%= post.title.truncate(150, separator: " ", omission: "...") %>
 
-          <% if post.elements.many? %>
+          <% if post.elements.any? %>
             <i class="bi bi-images ps-2"></i>
           <% end %>
         <p>

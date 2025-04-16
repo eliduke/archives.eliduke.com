@@ -5,6 +5,14 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post     = Post.find(params[:id])
+    @elements = if @post.elements.any?
+      # include the post as the first element
+      @post.elements.to_a.unshift(@post)
+    else
+      # include only the post, so the
+      # .each in the view still works
+      [@post]
+    end
   end
 end
