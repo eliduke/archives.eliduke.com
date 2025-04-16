@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     else
       # include only the post, so the
       # .each in the view still works
-      [@post]
+      [ @post ]
     end
   end
 end
