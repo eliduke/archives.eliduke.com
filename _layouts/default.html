@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Archives</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="/css/app.css?v={{ site.time | date: '%s' }}">
+  </head>
+
+  <body class="py-4">
+    <div class="container">
+      <p class="text-center mb-1 fw-medium fs-3">
+        <a href="#">archives</a> / <a href="#">instagram</a> / eliduke
+      </p>
+      <p class="text-center mb-4">
+        <small>an archive, for posterity's sake</small>
+      </p>
+      {{ content }}
+    </div>
+  </body>
+</html>
