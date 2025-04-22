@@ -1,10 +1,9 @@
 title: Archives
 email: me@eliduke.com
 description: Archives of the Social Media of Eli Duke
-baseurl: ""
 url: "https://archives.eliduke.com"
 
 collections:
   grams:
     output: true
-    permalink: /gram/:path
+    permalink: /posts/:path
