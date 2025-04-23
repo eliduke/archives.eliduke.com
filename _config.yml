@@ -4,6 +4,9 @@ description: Archives of the Social Media of Eli Duke
 url: "https://archives.eliduke.com"
 
 collections:
+  manuals:
+    output: true
+    permalink: /manuals/:path
   grams:
     output: true
     permalink: /posts/:path

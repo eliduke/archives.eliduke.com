@@ -20,3 +20,19 @@ a:hover { color: #555555 }
 /* Link style for post captions */
 a p.caption { color: #333333 }
 a p.caption:hover { background-color: #fbdbf9 }
+
+/* MANUALS */
+
+#manuals-index {
+  .manual { width: 340px }
+}
+
+#manuals-list { font-size: 90% }
+
+#manuals-about {
+  font-size: 120%;
+
+  img {
+    margin: 20px 0;
+  }
+}

@@ -1,0 +1,31 @@
+---
+layout: manuals
+permalink: /manuals/list
+---
+
+<div id="manuals-list" class="p-2">
+  <div class="row">
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>Carrier</th>
+          <th>Make & Model</th>
+          <th>Mode</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for manual in site.manuals %}
+          <tr>
+            <td>
+              <a href="{{manual.id}}" class="link-secondary">
+                {{manual.carrier}}
+              </a>
+            </td>
+            <td>{{manual.make}} {{manual.model}}</td>
+            <td>{{manual.mode}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
