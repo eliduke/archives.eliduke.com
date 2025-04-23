@@ -11,10 +11,12 @@ video {
   max-height: 100%;
 }
 
+a, a:hover { text-decoration: none }
+
 /* Link style for nav, etc */
-a { color: #ed4fe3; text-decoration: none }
-a:hover { text-decoration: underline }
+a { color: #ed4fe3 }
+a:hover { color: #555 }
 
 /* Link style for post captions */
-.caption a { color: #333; text-decoration: none }
-.caption a:hover { background-color: #fbdbf9; text-decoration: none }
+a p.caption { color: #333 }
+a p.caption:hover { background-color: #fbdbf9 }

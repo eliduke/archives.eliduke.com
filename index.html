@@ -29,8 +29,8 @@ layout: default
           {% endif %}
         </div>
       </a>
-      <p class="caption mb-5">
-        <a href="{{ gram.url }}">
+      <a href="{{ gram.url }}">
+        <p class="caption mb-5">
           <b>{{ gram.time | date: "%B %-d, %Y" }}</b>:
 
           {{ gram.caption | truncatewords: 30 }}
@@ -38,8 +38,8 @@ layout: default
           {% if gram.media.size > 1 %}
             <i class="bi bi-images ps-2"></i>
           {% endif %}
-        </a>
-      </p>
+        </p>
+      </a>
   </div>
   {% endfor %}
 </div>
