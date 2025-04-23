@@ -17,17 +17,20 @@ layout: default
   {% assign grams = site.grams | reverse %}
   {% for gram in grams limit: 20 %}
     {% assign link = gram.media.first %}
-    <div class="post p-2">
-      {% if link contains "jpg" %}
-        <img class="img-fluid rounded mb-1" src="https://assets.eliduke.com/archives/instagram/eliduke/{{ link }}">
-      {% else %}
-        <video controls>
-          <source src="https://assets.eliduke.com/archives/instagram/eliduke/{{ link }}" type="video/mp4">
-        </video>
-      {% endif %}
-
+    <div class="gram p-2">
       <a href="{{ gram.url }}">
-        <p class="caption mb-5">
+        <div class="media mb-2">
+          {% if link contains "jpg" %}
+            <img class="img-fluid rounded" src="https://assets.eliduke.com/archives/instagram/eliduke/{{ link }}">
+          {% else %}
+            <video controls>
+              <source src="https://assets.eliduke.com/archives/instagram/eliduke/{{ link }}" type="video/mp4">
+            </video>
+          {% endif %}
+        </div>
+      </a>
+      <p class="caption mb-5">
+        <a href="{{ gram.url }}">
           <b>{{ gram.time | date: "%B %-d, %Y" }}</b>:
 
           {{ gram.caption | truncatewords: 30 }}
@@ -35,8 +38,8 @@ layout: default
           {% if gram.media.size > 1 %}
             <i class="bi bi-images ps-2"></i>
           {% endif %}
-        </p>
-      </a>
-    </div>
+        </a>
+      </p>
+  </div>
   {% endfor %}
 </div>

@@ -1,22 +1,20 @@
 ---
 ---
 
-.caption {
-  font-size: 85%;
-  color: #787878;
+.gram { width: 350px }
+@media (min-width: 500px) {
+  .gram { width: 310px }
 }
-
-a { text-decoration: none }
-a:hover { text-decoration: underline }
-
-.post { width: 350px }
-.post a:hover { text-decoration: none; color: blue }
 
 video {
   width: 100%;
   max-height: 100%;
 }
 
-@media (min-width: 500px) {
-  .post { width: 310px }
-}
+/* Link style for nav, etc */
+a { color: #ed4fe3; text-decoration: none }
+a:hover { text-decoration: underline }
+
+/* Link style for post captions */
+.caption a { color: #333; text-decoration: none }
+.caption a:hover { background-color: #fbdbf9; text-decoration: none }
