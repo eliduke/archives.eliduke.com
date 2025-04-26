@@ -4,7 +4,7 @@ layout: default
 
 <div class="row">
   <div class="col-lg-6 offset-lg-3">
-    <div class="mb-4">
+    <div class="my-4">
       <p class="fw-bold">
         {{ page.time | date: "%B %-d, %Y" }}
       </p>
@@ -15,10 +15,10 @@ layout: default
     {% for link in page.media %}
       <div class="mb-3">
         {% if link contains "jpg" %}
-          <img class="img-fluid rounded mb-1" src="https://assets.eliduke.com/archives/instagram/eliduke/{{ link }}">
+          <img class="img-fluid rounded mb-1" src="{{ site.insta_eli_assets }}{{ link }}">
         {% else %}
           <video controls>
-            <source src="https://assets.eliduke.com/archives/instagram/eliduke/{{ link }}" type="video/mp4">
+            <source type="video/mp4" src="{{ site.insta_eli_assets }}{{ link }}">
           </video>
         {% endif %}
       </div>

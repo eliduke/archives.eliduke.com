@@ -2,44 +2,7 @@
 layout: default
 ---
 
-<div class="d-flex justify-content-center mb-5">
-  <form action="/" accept-charset="UTF-8" method="get">
-    <div class="input-group">
-      <input placeholder="Search for stuff..." class="form-control" type="text" name="q" id="q" />
-      <span class="input-group-text">
-        <span class="btn btn-sm text-muted">×</span>
-      </span>
-    </div>
-  </form>
-</div>
-
-<div class="d-inline-flex flex-wrap flex-row justify-content-evenly align-items-top">
-  {% assign grams = site.grams | reverse %}
-  {% for gram in grams limit: 20 %}
-    {% assign link = gram.media.first %}
-    <div class="gram p-2">
-      <a href="{{ gram.url }}">
-        <div class="media mb-2">
-          {% if link contains "jpg" %}
-            <img class="img-fluid rounded" src="https://assets.eliduke.com/archives/instagram/eliduke/{{ link }}">
-          {% else %}
-            <video controls>
-              <source src="https://assets.eliduke.com/archives/instagram/eliduke/{{ link }}" type="video/mp4">
-            </video>
-          {% endif %}
-        </div>
-      </a>
-      <a href="{{ gram.url }}">
-        <p class="caption mb-5">
-          <b>{{ gram.time | date: "%B %-d, %Y" }}</b>:
-
-          {{ gram.caption | truncatewords: 30 }}
-
-          {% if gram.media.size > 1 %}
-            <i class="bi bi-images ps-2"></i>
-          {% endif %}
-        </p>
-      </a>
-  </div>
-  {% endfor %}
+<div class="p-4">
+  <h1>The Archives</h1>
+  <p>Placeholder text here for now. Eventually want to build out a simple home page.</p>
 </div>

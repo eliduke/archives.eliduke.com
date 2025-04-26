@@ -15,15 +15,57 @@
     <link rel="stylesheet" href="/css/app.css?v={{ site.time | date: '%s' }}">
   </head>
 
-  <body class="py-4">
-    <div class="container">
-      <p class="text-center mb-1 fw-medium fs-3 text-muted">
-        <a href="#">archives</a> / <a href="#">instagram</a> / @eliduke
-      </p>
-      <p class="text-center mb-4">
-        <small>an archive, for posterity's sake</small>
-      </p>
-      {{ content }}
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2 bg-danger-subtle">
+          <ul class="nav nav-pills flex-row flex-lg-column py-3 pt-lg-3">
+            <li class="fw-bold">
+              <a href="/" class="nav-link link-dark">
+                The Archives
+              </a>
+            </li>
+            <li class="fw-bold">
+              <a href="/instagram" class="nav-link link-dark">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="/instagram/eliduke" class="nav-link link-dark ms-3">
+                @eliduke
+              </a>
+            </li>
+            <li>
+              <a href="/instagram/skatertotspdx" class="nav-link link-dark ms-3">
+                @skatertotspdx
+              </a>
+            </li>
+            <li class="fw-bold">
+              <a href="#" class="nav-link link-dark">
+                In-Flight Safety
+              </a>
+            </li>
+            <li>
+              <a href="/manuals" class="nav-link link-dark ms-3">
+                Manuals
+              </a>
+            </li>
+            <li>
+              <a href="/manuals/list" class="nav-link link-dark ms-3">
+                List
+              </a>
+            </li>
+            <li>
+              <a href="/manuals/about" class="nav-link link-dark ms-3">
+                About
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-10">
+          {{ content }}
+        </div>
+      </div>
     </div>
   </body>
 </html>
