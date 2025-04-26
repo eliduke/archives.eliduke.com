@@ -2,20 +2,12 @@
 layout: default
 ---
 
-<div class="row">
+<div class="row mt-5">
   <div class="col-lg-6 offset-lg-3">
-    <div class="my-4">
-      <p class="fw-bold">
-        {{ page.time | date: "%B %-d, %Y" }}
-      </p>
-
-      {{ page.caption }}
-    </div>
-
     {% for link in page.media %}
-      <div class="mb-3">
+      <div class="mb-4">
         {% if link contains "jpg" %}
-          <img class="img-fluid rounded mb-1" src="{{ site.insta_eli_assets }}{{ link }}">
+          <img class="img-fluid" src="{{ site.insta_eli_assets }}{{ link }}">
         {% else %}
           <video controls>
             <source type="video/mp4" src="{{ site.insta_eli_assets }}{{ link }}">
@@ -23,5 +15,13 @@ layout: default
         {% endif %}
       </div>
     {% endfor %}
+
+    <div class="my-4">
+      <p class="fw-bold">
+        {{ page.time | date: "%B %-d, %Y" }}
+      </p>
+
+      {{ page.caption }}
+    </div>
   </div>
 </div>
