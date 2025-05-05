@@ -74,6 +74,28 @@
         </div>
         <div class="col-lg-10">
           {{ content }}
+
+          {%- if paginator.page_trail %}
+            <ul class="list-unstyled d-flex justify-content-center">
+              {%- if paginator.previous_page %}
+                <li class="mx-2">
+                  <a class="link-dark" href="{{ paginator.previous_page_path }}">Newer</a>
+                </li>
+              {%- endif %}
+
+              {%- for trail in paginator.page_trail %}
+                <li class="mx-2">
+                  <a class="link-dark" href="{{ trail.path }}" title="{{trail.title}}">{{ trail.num }}</a>
+                </li>
+              {%- endfor %}
+
+              {%- if paginator.next_page %}
+                <li class="mx-2">
+                  <a class="link-dark" href="{{ paginator.next_page_path }}">Older</a>
+                </li>
+              {%- endif %}
+            </ul>
+          {%- endif %}
         </div>
       </div>
     </div>

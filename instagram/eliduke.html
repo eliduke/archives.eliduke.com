@@ -1,6 +1,9 @@
 ---
 layout: default
 permalink: /instagram/eliduke
+pagination:
+  enabled: true
+  collection: grams-eliduke
 ---
 
 <!-- <div class="d-flex justify-content-center mb-5">
@@ -15,8 +18,7 @@ permalink: /instagram/eliduke
 </div> -->
 
 <div class="d-inline-flex flex-wrap flex-row justify-content-evenly align-items-top mt-5">
-  {% assign grams = site.grams | reverse %}
-  {% for gram in grams limit: 20 %}
+  {% for gram in paginator.posts %}
     {% assign link = gram.media.first %}
     <div class="gram p-2">
       <a href="{{ gram.url }}">

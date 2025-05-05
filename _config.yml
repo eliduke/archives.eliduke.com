@@ -1,6 +1,6 @@
 title: Archives
 email: me@eliduke.com
-description: Archives of the Social Media of Eli Duke
+description: Archives of Eli Duke
 url: "https://archives.eliduke.com"
 insta_eli_assets: "https://assets.eliduke.com/archives/instagram/eliduke/"
 
@@ -8,6 +8,17 @@ collections:
   manuals:
     output: true
     permalink: /manuals/:path
-  grams:
+  grams-eliduke:
     output: true
     permalink: /instagram/eliduke/:path
+
+pagination:
+  enabled: true
+  permalink: '/page/:num/'
+  title: ':title - page :num of :max'
+  sort_field: 'time'
+  sort_reverse: true
+  per_page: 20
+  trail:
+    before: 2
+    after: 2
