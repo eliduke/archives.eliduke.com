@@ -1,3 +1,21 @@
+# [
+#   {
+#     tweet: {
+#     id: "1828991784942481441",
+#     in_reply_to_status_id: "1747378284911092181",
+#     created_at: "Thu Aug 29 03:03:17 +0000 2024",
+#     full_text: "https://t.co/tsTi7nSdyt",
+#     extended_entities: {
+#       media: [{
+#         media_url: "http://pbs.twimg.com/media/GWHiU2IbgAAgner.jpg",
+#         type: "photo"
+#       }]
+#     }
+#   },{
+#     tweet: {...}
+#   }
+# ]
+
 require 'json'
 
 file = File.open(Dir.pwd + "/json/tweets-shitfannysays.json")
